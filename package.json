@@ -22,7 +22,5 @@
   },
   "homepage": "https://github.com/dfcreative/pretty-number#readme",
   "dependencies": {
-    "almost-equal": "^1.1.0",
-    "mumath": "^3.3.1"
   }
 }

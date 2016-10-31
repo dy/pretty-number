@@ -2,10 +2,6 @@
 
 'use strict';
 
-const lg = require('mumath/log10');
-const almost = require('almost-equal');
-
-
 module.exports = pretty;
 
 
@@ -55,14 +51,14 @@ function pretty (num, precision) {
 
 	//the only reliable way to round .999999x → 1 or .0000001 → 0 I know
 	str = str.replace(/([0-8]|[0-9]\.)9{3,}[0-9]{1,2}$/g, (match, p) => parseInt(p) + 1);
-	str = str.replace(/([0-9])0{3,}[0-9]{1,2}?$/g, (match, p) => parseInt(p));
+	str = str.replace(/([0-9])0{3,}[0-9]{1,2}?$/g, (match, p) => p);
 
 	//shortcuts for 1 and 10
 	let rMantissa = parseFloat(str);
 	if (rMantissa === 10) {
 		return (sign ? pretty.minusSign : '') + '10' + sup(exponent+1);
 	}
-	else if (almost(rMantissa, 1) && exponent) {
+	else if (rMantissa === 1 && exponent) {
 		return (sign ? pretty.minusSign : '') + '10' + sup(exponent);
 	}
 
