@@ -1,6 +1,6 @@
 #pretty-number [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-Format number so it gets more humane format, e. g. `20000 → '20k'`
+Format number so it gets more humane format.
 
 
 ## Usage
