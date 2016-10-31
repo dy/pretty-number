@@ -1,6 +1,6 @@
 {
   "name": "pretty-number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Format any number to beauty form",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,5 @@
     "url": "https://github.com/dfcreative/pretty-number/issues"
   },
   "homepage": "https://github.com/dfcreative/pretty-number#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
