@@ -1,6 +1,6 @@
 {
   "name": "pretty-number",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Format any number to beauty form",
   "main": "index.js",
   "scripts": {
