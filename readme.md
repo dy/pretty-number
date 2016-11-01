@@ -11,17 +11,16 @@ Format number so it gets more humane format.
 const pretty = require('pretty-number');
 
 pretty(10e+20) // 10²¹
-pretty(12e+20) // 1.2×10²¹
+pretty(12e+20) // 1.2 × 10²¹
 pretty(1) // 1
 pretty(0) // 0
-pretty(1.555e+20) // 1.555×10²⁰
-pretty(1.555e-15) // 1.555×10⁻¹⁵
+pretty(-1) // −1
+pretty(1.555e+20) // 1.555 × 10²⁰
+pretty(1.555e-15) // 1.555 × 10⁻¹⁵
 pretty(Infinity) // ∞
 pretty(-Infinity) // −∞
-pretty(7.2973525664e-3, 3) // 7.297 352 566 4×10⁻³
+pretty(7.2973525664e-3, 3) // 7.297 352 5664 × 10⁻³
 pretty(72973525.664) // 72 973 525.664
-pretty(-1) // −1
-pretty(1) // 1
 pretty(.123) // 0.123
 pretty(-.123) // −0.123
 pretty(1.5) // 1.5
@@ -30,6 +29,15 @@ pretty(1e100) // 10¹⁰⁰
 pretty(-1e100) // −10¹⁰⁰
 pretty(1e-100) // 10⁻¹⁰⁰
 pretty(-1e-100) // −10⁻¹⁰⁰
+```
+
+Formatting can be modified via constants:
+
+```js
+pretty.multSign = '×';
+pretty.minusSign = '−';
+pretty.spaceSign = ' ';
+pretty.fractSign = '.';
 ```
 
 ## Related

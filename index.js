@@ -75,6 +75,11 @@ function pretty (num, precision) {
 		res += pretty.fractSign;
 		for (let i = 0; i<fract.length; i+=3) {
 			res += (fract[i]||'') + (fract[i+1]||'') + (fract[i+2]||'');
+			//shortcut to avoid hanging digit, 0.1234567 → 0.123 4567
+			if (i+4 === fract.length && fract[i+3]) {
+				res += fract[i+3];
+				break;
+			}
 			if (fract[i+3]) {
 				res += pretty.spaceSign;
 			}
@@ -84,7 +89,7 @@ function pretty (num, precision) {
 
 	//if more than exp limit - display ×10^n
 	if (exponent) {
-		str += pretty.multSign + '10' + sup(exponent);
+		str += pretty.spaceSign + pretty.multSign + pretty.spaceSign + '10' + sup(exponent);
 	}
 
 	str = (sign ? pretty.minusSign : '') + str;
