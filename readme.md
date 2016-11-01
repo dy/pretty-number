@@ -38,7 +38,10 @@ pretty.multSign = '×';
 pretty.minusSign = '−';
 pretty.spaceSign = ' ';
 pretty.fractSign = '.';
+pretty.precision = 9;
 ```
+
+Note also that to make result look good custom font may be needed.
 
 ## Related
 
