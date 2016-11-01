@@ -24,7 +24,7 @@ pretty.minusSign = '−';
 pretty.spaceSign = ' ';
 pretty.fractSign = '.';
 
-pretty.precision = 9;
+pretty.precision = 10;
 
 
 function pretty (num, precision) {
@@ -41,17 +41,21 @@ function pretty (num, precision) {
 		mantissa = Math.abs(num);
 		exponent = 0;
 	}
+
 	//if exp is not small enough - keep fraction
 	if (exponent < 0 && exponent > -precision) {
 		exponent = 0;
 		mantissa = Math.abs(num);
 	}
 
-	let str = mantissa.toString();
+	let str = mantissa.toFixed(precision);
 
 	//the only reliable way to round .999999x → 1 or .0000001 → 0 I know
 	str = str.replace(/([0-8]|[0-9]\.)9{2,}[0-9]{1,2}$/g, (match, p) => parseInt(p) + 1);
-	str = str.replace(/(\.[0-9]*?)0{4,}[0-9]{1,2}?$/g, (match, p) => p);
+	str = str.replace(/(\.[0-9]*?)0{4,}[0-9]{1,2}?$/g, (match, p) => {
+		return p
+	});
+	str = str.replace(/([0-9]*\.[0-9]*?)0+$/, '$1');
 
 	//shortcuts for 1 and 10
 	let rMantissa = parseFloat(str);
