@@ -49,4 +49,5 @@ Note also that to make result look good custom font may be needed.
 
 ## Related
 
-[mumath](https://github.com/dfcreative/mumath) — set of practical math utils
+* [human-format](https://github.com/JsCommunity/human-format) — handle SI prefixes, supposedly works well with pretty-number.
+* [mumath](https://github.com/dfcreative/mumath) — set of practical math utils.

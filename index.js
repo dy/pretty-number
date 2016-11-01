@@ -24,7 +24,7 @@ pretty.minusSign = '−';
 pretty.spaceSign = ' ';
 pretty.fractSign = '.';
 
-pretty.precision = 11;
+pretty.precision = 10;
 
 
 function pretty (num, precision) {
