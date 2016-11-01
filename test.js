@@ -1,8 +1,10 @@
 let pretty = require('./');
 let assert = require('assert');
 
-
 assert.equal(pretty(7.2973525664e-3, 3), '7.297 352 5664 × 10⁻³');
+assert.equal(pretty(9999), '9 999');
+assert.equal(pretty(10000), '10 000');
+assert.equal(pretty(1000000000001), '10¹²');
 assert.equal(pretty(10e+20), '10²¹');
 assert.equal(pretty(12e+20), '1.2 × 10²¹');
 assert.equal(pretty(1), '1');
