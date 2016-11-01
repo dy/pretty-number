@@ -31,7 +31,7 @@ function pretty (num, precision) {
 	if (!isFinite(num)) return num < 0 ? (pretty.minusSign + '∞') : '∞';
 	if (num === 0) return '0';
 
-	precision = precision != null ? precision : pretty.precision;
+	precision = parseInt(precision) || pretty.precision;
 
 	let {sign, mantissa, exponent} = getNumberParts(num, 10);
 
