@@ -3,6 +3,7 @@ let assert = require('assert');
 
 // assert.equal(pretty(7.2973525664e-3), '7.297 352 5664 × 10⁻³');
 assert.equal(pretty(77.4241787278999), '77.424 178 7279');
+//FIXME: this local part is not rounded nicely here by default
 assert.equal(pretty(-0.000000005, 12), '−0.000 000 005');
 assert.equal(pretty(-0.0000005), '−0.000 0005');
 assert.equal(pretty(-0.005), '−0.005');

@@ -24,14 +24,14 @@ pretty.minusSign = '−';
 pretty.spaceSign = ' ';
 pretty.fractSign = '.';
 
-pretty.precision = 10;
+pretty.precision = 11;
 
 
 function pretty (num, precision) {
 	if (!isFinite(num)) return num < 0 ? (pretty.minusSign + '∞') : '∞';
 	if (num === 0) return '0';
 
-	precision = parseInt(precision) || pretty.precision;
+	precision = Math.max(Math.min(Math.abs(parseInt(precision)) || pretty.precision, 20), 0);
 
 	let {sign, mantissa, exponent} = getNumberParts(num, 10);
 
